@@ -6,6 +6,7 @@ import '@livekit/components-styles';
 import { TeacherWindow } from '@/app/components/TeacherWindow';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 import { StudentWindow } from '@/app/components/StudentWindow';
+import { BASE_URL } from '@/query';
 
 export default function ChatRoom({
   roomId,
@@ -21,7 +22,7 @@ export default function ChatRoom({
     const fetchToken = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/livekit?roomId=${roomId}&role=${role}`
+          `${BASE_URL}/livekit?roomId=${roomId}&role=${role}`
         );
         const data = await response.json();
         setToken(data.participantToken);

@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-
+import { BASE_URL } from '@/query';
 export default function Transcription() {
   const socket = useRef<WebSocket | null>(null);
   const audioContext = useRef<AudioContext | null>(null);
@@ -18,7 +18,7 @@ export default function Transcription() {
     transcript: string;
     isPartial: boolean;
   }) => {
-    const response = await fetch('http://localhost:8000/add-to-lesson', {
+    const response = await fetch(`${BASE_URL}/add-to-lesson`, {
       method: 'POST',
       body: JSON.stringify(params),
     });
@@ -30,7 +30,7 @@ export default function Transcription() {
   };
 
   const getToken = async () => {
-    const response = await fetch('http://localhost:8000/token');
+    const response = await fetch(`${BASE_URL}/token`);
     const data = await response.json();
 
     if (data.error) {

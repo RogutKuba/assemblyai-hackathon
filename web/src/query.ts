@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
-const BASE_URL = 'http://localhost:8000';
+export const BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
 
 export const getLessonNotes = async (lessonId: string): Promise<string> => {
   const response = await fetch(`${BASE_URL}/lesson/${lessonId}`);

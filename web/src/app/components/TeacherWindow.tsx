@@ -1,5 +1,5 @@
 import { ReportViewer } from '@/app/components/ReportViewer';
-import { useLessonNotes } from '@/query';
+import { BASE_URL, useLessonNotes } from '@/query';
 import { Button } from '@/ui/button';
 import { cx } from '@/ui/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/tabs';
@@ -25,7 +25,7 @@ export const TeacherWindow = (props: { roomId: string }) => {
     transcript: string;
     isPartial: boolean;
   }) => {
-    const response = await fetch('http://localhost:8000/add-to-lesson', {
+    const response = await fetch(`${BASE_URL}/add-to-lesson`, {
       method: 'POST',
       body: JSON.stringify({
         roomId,
@@ -41,7 +41,7 @@ export const TeacherWindow = (props: { roomId: string }) => {
   };
 
   const getToken = async () => {
-    const response = await fetch('http://localhost:8000/token');
+    const response = await fetch(`${BASE_URL}/token`);
     const data = await response.json();
 
     if (data.error) {
