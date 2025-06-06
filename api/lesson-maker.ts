@@ -74,13 +74,23 @@ export class LessonMaker {
     text: string,
     isPartial: boolean = false
   ) {
-    // update the lesson file path
-    this.lessonFilePath = path.join(
-      process.cwd(),
-      'data',
-      'lessons',
-      `${roomId}.md`
-    );
+    // check if roomId is different from the current lessonId
+    if (roomId !== this.lessonId) {
+      this.lessonId = roomId;
+      this.reset();
+      // update the lesson file path
+      this.lessonFilePath = path.join(
+        process.cwd(),
+        'data',
+        'lessons',
+        `${roomId}.md`
+      );
+
+      this.loadExistingContent();
+
+      this.startSummaryTimer();
+    }
+
     const now = Date.now();
     this.lastUpdateTime = now;
 

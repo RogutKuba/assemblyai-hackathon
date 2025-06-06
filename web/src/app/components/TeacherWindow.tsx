@@ -3,7 +3,7 @@ import { BASE_URL, useLessonNotes } from '@/query';
 import { Button } from '@/ui/button';
 import { cx } from '@/ui/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/tabs';
-import { useChat, useDataChannel } from '@livekit/components-react';
+import { useChat } from '@livekit/components-react';
 import { useRef, useState } from 'react';
 
 export const TeacherWindow = (props: { roomId: string }) => {
