@@ -143,14 +143,13 @@ app
 
     const filePath = path.join(
       process.cwd(),
-      '..',
       'data',
       'lessons',
       `${lessonId}.md`
     );
 
     if (!fs.existsSync(filePath)) {
-      return c.json({ error: 'Lesson not found' }, 404);
+      return c.text('No lesson notes found');
     }
 
     const lessonNotes = fs.readFileSync(filePath, 'utf8');
