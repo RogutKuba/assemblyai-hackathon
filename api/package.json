@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hono/node-server": "^1.14.3",
+    "assemblyai": "^4.13.2",
+    "dotenv": "^16.5.0",
+    "hono": "^4.7.11",
+    "livekit-server-sdk": "^2.13.0",
+    "openai": "^5.1.1",
+    "tsx": "^4.19.4",
+    "zod": "^3.25.55"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30"
+  }
+}
