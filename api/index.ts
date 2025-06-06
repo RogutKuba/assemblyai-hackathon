@@ -25,6 +25,8 @@ const LIVEKIT_API_KEY = process.env.LIVEKIT_API_KEY;
 const LIVEKIT_API_SECRET = process.env.LIVEKIT_API_SECRET;
 const LIVEKIT_WS_URL = process.env.LIVEKIT_URL;
 
+const port = process.env.PORT ? Number(process.env.PORT) : 8000;
+
 if (!ASSEMBLYAI_API_KEY) {
   throw new Error('ASSEMBLYAI_API_KEY is not set');
 }
@@ -179,7 +181,6 @@ app
   });
 
 // Start the server
-const port = 8000;
 serve(
   {
     fetch: app.fetch,

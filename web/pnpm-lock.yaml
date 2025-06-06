@@ -89,6 +89,9 @@ importers:
       '@vapi-ai/web':
         specifier: ^2.3.5
         version: 2.3.5
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       livekit-client:
         specifier: ^2.13.3
         version: 2.13.3(@types/dom-mediacapture-record@1.0.22)

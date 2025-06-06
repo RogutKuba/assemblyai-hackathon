@@ -1,6 +1,5 @@
 'use client';
 
-import { useDataChannel } from '@livekit/components-react';
 import { useRef, useState } from 'react';
 
 export default function Transcription() {
