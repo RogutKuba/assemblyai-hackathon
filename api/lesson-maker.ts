@@ -33,7 +33,6 @@ export class LessonMaker {
     });
     this.lessonFilePath = path.join(
       process.cwd(),
-      '..',
       'data',
       'lessons',
       'default.md'
@@ -78,7 +77,6 @@ export class LessonMaker {
     // update the lesson file path
     this.lessonFilePath = path.join(
       process.cwd(),
-      '..',
       'data',
       'lessons',
       `${roomId}.md`

@@ -11,7 +11,6 @@ import {
   VideoGrant,
 } from 'livekit-server-sdk';
 import dotenv from 'dotenv';
-import { Readable } from 'stream';
 import { LessonMaker } from './lesson-maker';
 import fs from 'fs';
 import path from 'path';
@@ -53,6 +52,13 @@ const aaiClient = new AssemblyAI({
 });
 
 const app = new Hono<AppContext>();
+
+// make the data folder
+if (!fs.existsSync(path.join(process.cwd(), 'data', 'lessons'))) {
+  fs.mkdirSync(path.join(process.cwd(), 'data', 'lessons'), {
+    recursive: true,
+  });
+}
 
 // Enable CORS
 app
